@@ -1,7 +1,6 @@
 using FastEndpoints;
 using FastEndpoints.Swagger;
 using FeDemoWebApi.Repositories;
-using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +14,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-	app.UseOpenApi(configure => configure.Path = "/openapi/{documentName}.json");
-	app.MapScalarApiReference("docs");
+	app.UseSwaggerGen();
 }
 
 app.UseHttpsRedirection();
