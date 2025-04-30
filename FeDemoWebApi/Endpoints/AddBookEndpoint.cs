@@ -4,11 +4,12 @@ using FeDemoWebApi.Repositories;
 
 namespace FeDemoWebApi.Endpoints;
 
-public class AddBookEndpoint(IBookRepository bookRepository) : Endpoint<NewBook>
+public class AddBookEndpoint(IBookRepository bookRepository)
+	: Endpoint<NewBook>
 {
 	public override void Configure()
 	{
-		Post("/books/add");
+		Post("/books");
 		AllowAnonymous();
 	}
 
