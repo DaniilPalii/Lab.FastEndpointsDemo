@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastEndpointsDemo", "FastEndpointsDemo\FastEndpointsDemo.csproj", "{F20B5FB9-B128-4BEE-B83F-958F2F9642F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeDemoWebApi", "FeDemoWebApi\FeDemoWebApi.csproj", "{F20B5FB9-B128-4BEE-B83F-958F2F9642F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
