@@ -1,11 +1,13 @@
 using FastEndpoints;
+using FastEndpoints.Swagger;
 using FeDemoWebApi.Repositories;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOpenApi();
-builder.Services.AddFastEndpoints();
+builder.Services
+	.AddFastEndpoints()
+	.SwaggerDocument();
 
 builder.Services.AddSingleton<IBookRepository, InMemoryBookRepository>();
 
@@ -13,7 +15,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-	app.MapOpenApi();
+	app.UseOpenApi(configure => configure.Path = "/openapi/{documentName}.json");
 	app.MapScalarApiReference("docs");
 }
 
