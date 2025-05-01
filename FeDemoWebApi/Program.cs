@@ -1,7 +1,7 @@
 using FastEndpoints;
 using FastEndpoints.Swagger;
+using FeDemoWebApi.Configuration;
 using FeDemoWebApi.Exceptions;
-using FeDemoWebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +11,7 @@ builder.Services
 
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
-builder.Services.AddSingleton<IBookRepository, InMemoryBookRepository>();
+Services.Inject(builder);
 
 var app = builder.Build();
 
