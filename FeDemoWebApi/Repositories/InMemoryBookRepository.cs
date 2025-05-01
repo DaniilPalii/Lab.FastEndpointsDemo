@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using FeDemoWebApi.Exceptions;
 
 namespace FeDemoWebApi.Repositories;
 
@@ -31,7 +32,7 @@ public class InMemoryBookRepository : IBookRepository
 		var existingEntity = Get(entity.Id);
 
 		if (existingEntity is null)
-			throw new Exception("Book not found in repository");
+			throw new EntityNotFoundException(entity.Id);
 
 		existingEntity.Title = entity.Title;
 		existingEntity.Author = entity.Author;
@@ -40,7 +41,10 @@ public class InMemoryBookRepository : IBookRepository
 
 	public void Delete(long id)
 	{
-		dictionary.Remove(id, out _);
+		var succeed = dictionary.TryRemove(id, out _);
+
+		if (!succeed)
+			throw new EntityNotFoundException(id);
 	}
 
 	private long nextId = 1;

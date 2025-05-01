@@ -1,5 +1,6 @@
 using FastEndpoints;
 using FastEndpoints.Swagger;
+using FeDemoWebApi.Exceptions;
 using FeDemoWebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
 	.AddFastEndpoints()
 	.SwaggerDocument();
+
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 builder.Services.AddSingleton<IBookRepository, InMemoryBookRepository>();
 
@@ -19,5 +22,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseFastEndpoints();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.Run();
