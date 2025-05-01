@@ -12,5 +12,5 @@ public record Book(
 			entity.Title,
 			entity.Author,
 			entity.DateOfPublication)
-	{}
+	{ }
 }

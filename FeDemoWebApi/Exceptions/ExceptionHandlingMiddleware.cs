@@ -22,7 +22,7 @@ public class ExceptionHandlingMiddleware : IMiddleware
 		var response = exception switch
 		{
 			EntityNotFoundException _ => new ExceptionResponse(HttpStatusCode.NotFound, exception.Message),
-			_ => new(HttpStatusCode.InternalServerError, "Internal server error.")
+			_ => new(HttpStatusCode.InternalServerError, "Internal server error."),
 		};
 
 		context.Response.ContentType = MediaTypeNames.Application.Json;
