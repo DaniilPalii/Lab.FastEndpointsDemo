@@ -1,6 +1,6 @@
 namespace FeDemoWebApi.DTO;
 
-public record Book(
+public sealed record Book(
 	long Id,
 	string Title,
 	string Author,

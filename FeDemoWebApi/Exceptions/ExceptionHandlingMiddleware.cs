@@ -3,7 +3,7 @@ using System.Net.Mime;
 
 namespace FeDemoWebApi.Exceptions;
 
-public class ExceptionHandlingMiddleware : IMiddleware
+public sealed class ExceptionHandlingMiddleware : IMiddleware
 {
 	public async Task InvokeAsync(HttpContext context, RequestDelegate next)
 	{

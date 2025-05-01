@@ -1,6 +1,6 @@
 namespace FeDemoWebApi.Entities;
 
-public class Book
+public sealed class Book
 {
 	public long Id { get; set; }
 

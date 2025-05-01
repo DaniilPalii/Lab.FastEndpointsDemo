@@ -4,7 +4,7 @@ using FeDemoWebApi.Repositories;
 
 namespace FeDemoWebApi.Endpoints;
 
-public class UpdateBookEndpoint(IBookRepository bookRepository)
+public sealed class UpdateBookEndpoint(IBookRepository bookRepository)
 	: Endpoint<UpdateBookEndpoint.Request, NewBook>
 {
 	public record Request(long Id, NewBook NewBook);

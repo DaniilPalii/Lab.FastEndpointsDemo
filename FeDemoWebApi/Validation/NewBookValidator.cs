@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace FeDemoWebApi.Validation;
 
-public class NewBookValidator : Validator<NewBook>
+public sealed class NewBookValidator : Validator<NewBook>
 {
 	public NewBookValidator()
 	{

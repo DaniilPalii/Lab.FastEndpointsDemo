@@ -3,7 +3,7 @@ using FeDemoWebApi.Repositories;
 
 namespace FeDemoWebApi.Endpoints;
 
-public class GetBookEndpoint(IBookRepository bookRepository)
+public sealed class GetBookEndpoint(IBookRepository bookRepository)
 	: Endpoint<GetBookEndpoint.Request, DTO.Book>
 {
 	public record Request(long Id);

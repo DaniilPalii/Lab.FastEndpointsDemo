@@ -4,7 +4,7 @@ namespace FeDemoWebApi.Repositories;
 
 public interface IBookRepository
 {
-	Book Add(Book entity);
+	void Add(Book entity);
 
 	Book? Get(long id);
 

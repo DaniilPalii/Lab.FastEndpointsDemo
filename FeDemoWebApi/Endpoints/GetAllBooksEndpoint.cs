@@ -3,7 +3,7 @@ using FeDemoWebApi.Repositories;
 
 namespace FeDemoWebApi.Endpoints;
 
-public class GetAllBooksEndpoint(IBookRepository bookRepository)
+public sealed class GetAllBooksEndpoint(IBookRepository bookRepository)
 	: EndpointWithoutRequest<IEnumerable<DTO.Book>>
 {
 	public override void Configure()

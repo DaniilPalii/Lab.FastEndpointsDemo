@@ -4,7 +4,7 @@ using FeDemoWebApi.Repositories;
 
 namespace FeDemoWebApi.Endpoints;
 
-public class AddBookEndpoint(IBookRepository bookRepository)
+public sealed class AddBookEndpoint(IBookRepository bookRepository)
 	: Endpoint<NewBook>
 {
 	public override void Configure()

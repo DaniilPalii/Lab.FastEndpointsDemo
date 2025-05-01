@@ -1,6 +1,6 @@
 namespace FeDemoWebApi.DTO;
 
-public record NewBook(
+public sealed record NewBook(
 	string Title,
 	string Author,
 	DateOnly DateOfPublication)

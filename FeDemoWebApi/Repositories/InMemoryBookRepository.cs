@@ -3,9 +3,9 @@ using FeDemoWebApi.Exceptions;
 
 namespace FeDemoWebApi.Repositories;
 
-public class InMemoryBookRepository : IBookRepository
+public sealed class InMemoryBookRepository : IBookRepository
 {
-	public Entities.Book Add(Entities.Book entity)
+	public void Add(Entities.Book entity)
 	{
 		lock (addingLock)
 		{
@@ -13,8 +13,6 @@ public class InMemoryBookRepository : IBookRepository
 			dictionary[nextId] = entity;
 			nextId++;
 		}
-
-		return entity;
 	}
 
 	public Entities.Book? Get(long id)

@@ -3,7 +3,7 @@ using FeDemoWebApi.Repositories;
 
 namespace FeDemoWebApi.Endpoints;
 
-public class RemoveBookEndpoint(IBookRepository bookRepository)
+public sealed class RemoveBookEndpoint(IBookRepository bookRepository)
 	: Endpoint<RemoveBookEndpoint.Request>
 {
 	public record Request(long Id);
