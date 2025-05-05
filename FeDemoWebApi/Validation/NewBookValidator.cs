@@ -20,9 +20,6 @@ public sealed class NewBookValidator : Validator<NewBook>
 		rule.NotEmpty()
 			.WithMessage($"{nameof(NewBook.Title)} is required.");
 
-		rule.MinimumLength(1)
-			.WithMessage($"{nameof(NewBook.Title)} should be at least 1 characters long");
-
 		rule.Matches(@"^\w")
 			.WithMessage($"{nameof(NewBook.Title)} should begin with a word character.");
 	}
@@ -33,9 +30,6 @@ public sealed class NewBookValidator : Validator<NewBook>
 
 		rule.NotEmpty()
 		    .WithMessage($"{nameof(NewBook.Author)} is required.");
-
-		rule.MinimumLength(1)
-		    .WithMessage($"{nameof(NewBook.Author)} should be at least 1 characters long");
 
 		rule.Matches(@"^\w")
 		    .WithMessage($"{nameof(NewBook.Author)} should begin with a word character.");
